@@ -1,0 +1,96 @@
+export type Lang = "ru" | "en";
+
+const STRINGS = {
+  ru: {
+    title: "НАЛЕЙ",
+    tagline: "До полного. Иногда.",
+    money: "Деньги",
+    queue: "Очередь",
+    served: "Заправлено",
+    stars: "Звёзды",
+    phaseDay: "День",
+    phaseEvening: "Вечер",
+    phaseNight: "Ночь",
+    rain: "Дождь",
+    order92: "Бензовоз 92 (малый)",
+    skipTanker: "Привезти сейчас (реклама)",
+    coffee: "Кофе",
+    hotdog: "Хот-доги",
+    sign: "Вывеска",
+    drinks: "Напитки",
+    toilet: "Туалет",
+    tank92: "Бак 92 +",
+    hire: "Нанять заправщика",
+    payDebt: "Оплатить долг",
+    pump92: "Колонка 92",
+    pump95: "Колонка 95",
+    pump100: "Колонка 100",
+    pumpDiesel: "Колонка ДТ",
+    contract: "Договор с нефтебазой",
+    boost: "×2 прибыль (реклама)",
+    debtBarrel: "Бочка в долг",
+    priority: "Приоритет",
+    hold: "Удержать",
+    pause: "Пауза",
+    resume: "Продолжить",
+    newGame: "Новая игра",
+    tankerEta: "Бензовоз",
+    attendant: "Заправщик",
+    debt: "Долг",
+    empty: "пусто",
+    liters: "л",
+    premiumSoon: "Премиум едет",
+  },
+  en: {
+    title: "NALEI",
+    tagline: "Fill up. Sometimes.",
+    money: "Money",
+    queue: "Queue",
+    served: "Served",
+    stars: "Stars",
+    phaseDay: "Day",
+    phaseEvening: "Evening",
+    phaseNight: "Night",
+    rain: "Rain",
+    order92: "Tanker 92 (small)",
+    skipTanker: "Deliver now (ad)",
+    coffee: "Coffee",
+    hotdog: "Hot dogs",
+    sign: "Sign",
+    drinks: "Drinks",
+    toilet: "Toilet",
+    tank92: "Tank 92 +",
+    hire: "Hire attendant",
+    payDebt: "Pay debt",
+    pump92: "Pump 92",
+    pump95: "Pump 95",
+    pump100: "Pump 100",
+    pumpDiesel: "Pump diesel",
+    contract: "Fuel contract",
+    boost: "×2 profit (ad)",
+    debtBarrel: "Barrel on credit",
+    priority: "Priority",
+    hold: "Hold",
+    pause: "Pause",
+    resume: "Resume",
+    newGame: "New game",
+    tankerEta: "Tanker",
+    attendant: "Attendant",
+    debt: "Debt",
+    empty: "empty",
+    liters: "L",
+    premiumSoon: "Premium incoming",
+  },
+} as const;
+
+export type StringKey = keyof (typeof STRINGS)["ru"];
+
+export function t(lang: Lang, key: StringKey): string {
+  return STRINGS[lang][key];
+}
+
+export function detectLang(): Lang {
+  if (typeof navigator === "undefined") return "ru";
+  const l = navigator.language.toLowerCase();
+  return l.startsWith("ru") ? "ru" : "en";
+}

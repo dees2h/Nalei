@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#131c28" />
+    <title>Налей</title>
+    <script type="module" crossorigin src="/assets/index-D_PFrbxD.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BdDtAOkJ.css">
+  </head>
+  <body>
+    <div id="app">
+      <header class="hud">
+        <div class="brand">
+          <h1 id="title">НАЛЕЙ</h1>
+          <p id="tagline">До полного. Иногда.</p>
+        </div>
+        <div class="hud-stats">
+          <div><span id="lbl-money">Деньги</span> <strong id="money">0</strong></div>
+          <div><span id="lbl-queue">Очередь</span> <strong id="queue">0</strong></div>
+          <div class="muted">A <strong id="attract">1</strong> <span id="stars">★</span></div>
+        </div>
+      </header>
+
+      <div class="stage">
+        <canvas id="scene"></canvas>
+        <div id="toast" class="toast hidden"></div>
+        <div class="phase-bar">
+          <span id="phase">День</span>
+          <span id="rain" class="hidden">Дождь</span>
+          <span id="tanker-eta" class="hidden"></span>
+        </div>
+      </div>
+
+      <div class="tanks" id="tanks"></div>
+      <div class="actions" id="actions"></div>
+
+      <footer class="footer">
+        <button type="button" id="btn-pause" class="secondary">Пауза</button>
+        <button type="button" id="btn-new" class="secondary">Новая игра</button>
+      </footer>
+    </div>
+  </body>
+</html>

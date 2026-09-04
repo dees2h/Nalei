@@ -1,0 +1,25 @@
+{
+  "name": "nalei",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "АЗС «Налей» — симулятор заправки",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "tsx --test tests/**/*.test.ts",
+    "sim": "tsx src/harness/cli.ts --sim-day",
+    "cli": "tsx src/harness/cli.ts",
+    "start": "vite"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.3"
+  }
+}
